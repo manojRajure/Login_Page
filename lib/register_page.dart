@@ -146,7 +146,8 @@ class _RegistorScreenState extends State<RegistorScreen> {
                                 onPressed: () {
                                   Navigator.pushNamed(context, 'login');
                                 },
-                                child: Text(
+                                style: const ButtonStyle(),
+                                child: const Text(
                                   'Sign In',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
@@ -154,7 +155,6 @@ class _RegistorScreenState extends State<RegistorScreen> {
                                       color: Colors.white,
                                       fontSize: 18),
                                 ),
-                                style: const ButtonStyle(),
                               ),
                             ],
                           )
