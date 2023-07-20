@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:login_page/register_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/login.png'),
+          image: AssetImage('assets/login1.png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -22,9 +24,9 @@ class _LoginScreenState extends State<LoginScreen> {
         body: Stack(children: [
           Container(
             padding: const EdgeInsets.only(left: 35, top: 135),
-            child: const Text(
+            child: Text(
               'Welcome\nBack',
-              style: TextStyle(color: Colors.white, fontSize: 33),
+              style: GoogleFonts.lato(color: Colors.black, fontSize: 33),
             ),
           ),
           SingleChildScrollView(
@@ -39,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextField(
                     decoration: InputDecoration(
                       hintText: 'Email',
-                      fillColor: Colors.grey.shade100,
+                      fillColor: Colors.black12,
                       filled: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
@@ -52,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Password',
-                      fillColor: Colors.grey.shade100,
+                      fillColor: Colors.black12,
                       filled: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
@@ -67,14 +69,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text(
                         'Sign In',
                         style: TextStyle(
-                          color: Color(0xff4c505b),
+                          color: Colors.black,
                           fontSize: 27,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                       CircleAvatar(
                         radius: 30,
-                        backgroundColor: const Color(0xff4c505b),
+                        backgroundColor: Colors.black,
                         child: IconButton(
                           onPressed: () {},
                           icon: const Icon(
@@ -93,12 +95,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'registor');
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (ctx) => const RegistorScreen(),
+                            ),
+                          );
                         },
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(
-                            color: Color(0xff4c505b),
+                            color: Colors.black,
                             decoration: TextDecoration.underline,
                             fontSize: 18,
                           ),
@@ -109,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: const Text(
                           'Forgot Password',
                           style: TextStyle(
-                            color: Color(0xff4c505b),
+                            color: Colors.black,
                             decoration: TextDecoration.underline,
                             fontSize: 18,
                           ),

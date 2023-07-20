@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:login_page/login_page.dart';
 
 class RegistorScreen extends StatefulWidget {
   const RegistorScreen({super.key});
@@ -13,21 +15,28 @@ class _RegistorScreenState extends State<RegistorScreen> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/register1.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.arrow_back),
+            color: Colors.black,
+          ),
         ),
         body: Stack(
           children: [
             Container(
               padding: const EdgeInsets.only(left: 35, top: 30),
-              child: const Text(
+              child: Text(
                 'Create\nAccount',
-                style: TextStyle(color: Colors.white, fontSize: 33),
+                style: GoogleFonts.lato(color: Colors.black, fontSize: 33),
               ),
             ),
             SingleChildScrollView(
@@ -120,13 +129,13 @@ class _RegistorScreenState extends State<RegistorScreen> {
                               const Text(
                                 'Sign Up',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontSize: 27,
                                     fontWeight: FontWeight.w700),
                               ),
                               CircleAvatar(
                                 radius: 30,
-                                backgroundColor: const Color(0xff4c505b),
+                                backgroundColor: Colors.black,
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {},
@@ -144,7 +153,8 @@ class _RegistorScreenState extends State<RegistorScreen> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (ctx) => const LoginScreen()));
                                 },
                                 style: const ButtonStyle(),
                                 child: const Text(
@@ -152,7 +162,7 @@ class _RegistorScreenState extends State<RegistorScreen> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 18),
                                 ),
                               ),
